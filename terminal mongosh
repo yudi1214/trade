@@ -1,0 +1,1127 @@
+Last login: Fri Mar 21 10:23:40 on ttys002
+fellipeotani@MacBook-Air-de-Fellipe ~ % cd downloads/deusomelhor-1
+npm install mongoose bcrypt jsonwebtoken nodemailer
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: cmdk@1.0.0
+npm error Found: react@19.0.0
+npm error node_modules/react
+npm error   peer react@">=16.8.0" from @floating-ui/react-dom@2.1.2
+npm error   node_modules/@floating-ui/react-dom
+npm error     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.2.2
+npm error     node_modules/@radix-ui/react-popper
+npm error       @radix-ui/react-popper@"1.2.2" from @radix-ui/react-select@2.1.6
+npm error       node_modules/@radix-ui/react-select
+npm error         @radix-ui/react-select@"^2.1.6" from the root project
+npm error       1 more (@radix-ui/react-tooltip)
+npm error   peer react@"^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc" from @radix-ui/react-accordion@1.2.3
+npm error   node_modules/@radix-ui/react-accordion
+npm error     @radix-ui/react-accordion@"^1.2.3" from the root project
+npm error   48 more (@radix-ui/react-arrow, @radix-ui/react-avatar, ...)
+npm error
+npm error Could not resolve dependency:
+npm error peer react@"^18.0.0" from cmdk@1.0.0
+npm error node_modules/cmdk
+npm error   cmdk@"1.0.0" from the root project
+npm error
+npm error Conflicting peer dependency: react@18.3.1
+npm error node_modules/react
+npm error   peer react@"^18.0.0" from cmdk@1.0.0
+npm error   node_modules/cmdk
+npm error     cmdk@"1.0.0" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /Users/fellipeotani/.npm/_logs/2025-03-21T15_00_20_850Z-eresolve-report.txt
+npm error A complete log of this run can be found in: /Users/fellipeotani/.npm/_logs/2025-03-21T15_00_20_850Z-debug-0.log
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npm install mongoose bcrypt jsonwebtoken nodemailer --legacy-peer-deps
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated npmlog@5.0.1: This package is no longer supported.
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated are-we-there-yet@2.0.0: This package is no longer supported.
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated gauge@3.0.2: This package is no longer supported.
+
+added 76 packages, and audited 648 packages in 7s
+
+187 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch .env.local
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % open .env.local
+No application knows how to open URL file:///Users/fellipeotani/Downloads/deusomelhor-1/.env.local (Error Domain=NSOSStatusErrorDomain Code=-10814 "kLSApplicationNotFoundErr: E.g. no application claims the file" UserInfo={_LSLine=1569, _LSFunction=runEvaluator}).
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % code .env.local
+zsh: command not found: code
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % nano .env.local
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % cat .env.local
+MONGODB_URI=mongodb://localhost:27017/trading-platform
+JWT_SECRET=seu_jwt_secret_seguro_aqui
+
+
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % mkdir -p app/api/auth/login
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % mkdir -p app/api/auth/register
+mkdir -p app/api/auth/forgot-password
+mkdir -p app/api/auth/verify-reset-code
+mkdir -p app/api/auth/reset-password
+mkdir -p app/api/auth/check-email
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % mkdir -p lib
+touch lib/db.ts
+touch lib/models.ts
+touch lib/auth.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch app/api/auth/login/route.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % nano lib/db.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % code lib/db.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch app/api/auth/register/route.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch app/api/auth/forgot-password/route.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch app/api/auth/verify-reset-code/route.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch app/api/auth/reset-password/route.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch app/api/auth/check-email/route.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com","password":"senha123"}'
+{"message":"Erro interno do servidor"}%                                         fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+>   -H "Content-Type: application/json" \
+>   -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+{"message":"Erro interno do servidor"}%                                         fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/login \
+>   -H "Content-Type: application/json" \
+>   -d '{"email":"teste@exemplo.com","password":"senha123"}'
+{"message":"Erro interno do servidor"}%                                         fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % brew tap mongodb/brew
+brew install mongodb-community
+==> Auto-updating Homebrew...
+Adjust how often this is run with HOMEBREW_AUTO_UPDATE_SECS or disable with
+HOMEBREW_NO_AUTO_UPDATE. Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Homebrew collects anonymous analytics.
+Read the analytics documentation (and how to opt-out) here:
+  https://docs.brew.sh/Analytics
+No analytics have been recorded yet (nor will be during this `brew` run).
+
+==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+adaptivecpp                              git-who
+anyquery                                 gtree
+cargo-sort                               gut
+cargo-spellcheck                         icu4c@77
+cpp-lazy                                 nmstatectl
+decompose                                rasterio
+dockcheck                                shuttle
+excalidraw-converter                     terraform-iam-policy-validator
+fabric-ai                                yutu
+fiona                                    zlib-rs
+==> New Casks
+ace-studio                               font-maple-mono-normal-nf-cn
+advanced-renamer                         font-webdings
+agent-tars                               k6-studio
+chime@alpha                              nethlink
+font-maple-mono-normal                   qobuz-downloader
+font-maple-mono-normal-cn                thelowtechguys-cling
+font-maple-mono-normal-nf
+
+You have 2 outdated formulae installed.
+
+==> Tapping mongodb/brew
+Cloning into '/opt/homebrew/Library/Taps/mongodb/homebrew-brew'...
+remote: Enumerating objects: 1535, done.
+remote: Counting objects: 100% (488/488), done.
+remote: Compressing objects: 100% (172/172), done.
+remote: Total 1535 (delta 405), reused 331 (delta 316), pack-reused 1047 (from 2)
+Receiving objects: 100% (1535/1535), 337.17 KiB | 5.03 MiB/s, done.
+Resolving deltas: 100% (916/916), done.
+Tapped 20 formulae (38 files, 433.0KB).
+==> Fetching dependencies for mongodb/brew/mongodb-community: mongodb/brew/mongodb-database-tools, icu4c@77, node and mongosh
+==> Fetching mongodb/brew/mongodb-database-tools
+==> Downloading https://fastdl.mongodb.org/tools/db/mongodb-database-tools-macos
+######################################################################### 100.0%
+==> Fetching icu4c@77
+==> Downloading https://ghcr.io/v2/homebrew/core/icu4c/77/manifests/77.1
+######################################################################### 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/icu4c/77/blobs/sha256:425a38eb7
+######################################################################### 100.0%
+==> Fetching node
+==> Downloading https://ghcr.io/v2/homebrew/core/node/manifests/23.10.0_1
+######################################################################### 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/node/blobs/sha256:67657af6984a8
+######################################################################### 100.0%
+==> Fetching mongosh
+==> Downloading https://ghcr.io/v2/homebrew/core/mongosh/manifests/2.4.2
+######################################################################### 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/mongosh/blobs/sha256:0841e04388
+######################################################################### 100.0%
+==> Fetching mongodb/brew/mongodb-community
+==> Downloading https://fastdl.mongodb.org/osx/mongodb-macos-arm64-8.0.6.tgz
+######################################################################### 100.0%
+==> Installing mongodb-community from mongodb/brew
+Warning: A newer Command Line Tools release is available.
+Update them from Software Update in System Settings.
+
+If that doesn't show you any updates, run:
+  sudo rm -rf /Library/Developer/CommandLineTools
+  sudo xcode-select --install
+
+Alternatively, manually download them from:
+  https://developer.apple.com/download/all/.
+You should download the Command Line Tools for Xcode 15.2.
+
+==> Installing dependencies for mongodb/brew/mongodb-community: mongodb/brew/mongodb-database-tools, icu4c@77, node and mongosh
+==> Installing mongodb/brew/mongodb-community dependency: mongodb/brew/mong
+Warning: A newer Command Line Tools release is available.
+Update them from Software Update in System Settings.
+
+If that doesn't show you any updates, run:
+  sudo rm -rf /Library/Developer/CommandLineTools
+  sudo xcode-select --install
+
+Alternatively, manually download them from:
+  https://developer.apple.com/download/all/.
+You should download the Command Line Tools for Xcode 15.2.
+
+🍺  /opt/homebrew/Cellar/mongodb-database-tools/100.9.5: 15 files, 114.2MB, built in 2 seconds
+==> Installing mongodb/brew/mongodb-community dependency: icu4c@77
+==> Downloading https://ghcr.io/v2/homebrew/core/icu4c/77/manifests/77.1
+Already downloaded: /Users/fellipeotani/Library/Caches/Homebrew/downloads/35ec2c3adb94255ba47424a4334da9616d97e1ec6d59ed907b368535018bed0a--icu4c@77-77.1.bottle_manifest.json
+==> Pouring icu4c@77--77.1.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/icu4c@77/77.1: 277 files, 81.2MB
+==> Installing mongodb/brew/mongodb-community dependency: node
+==> Downloading https://ghcr.io/v2/homebrew/core/node/manifests/23.10.0_1
+Already downloaded: /Users/fellipeotani/Library/Caches/Homebrew/downloads/6d6a47ebcdd717a5cccec40b9f2123b84daf74f0e92d642dd970084e68d38e7e--node-23.10.0_1.bottle_manifest.json
+==> Pouring node--23.10.0_1.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/node/23.10.0_1: 2,602 files, 92.3MB
+==> Installing mongodb/brew/mongodb-community dependency: mongosh
+==> Downloading https://ghcr.io/v2/homebrew/core/mongosh/manifests/2.4.2
+Already downloaded: /Users/fellipeotani/Library/Caches/Homebrew/downloads/691514f603b88dcd2b2937df83a6dda85fbb63842ea941fd3c8b7d0c19e981ce--mongosh-2.4.2.bottle_manifest.json
+==> Pouring mongosh--2.4.2.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/mongosh/2.4.2: 11,189 files, 66.4MB
+==> Installing mongodb/brew/mongodb-community
+==> Caveats
+To start mongodb/brew/mongodb-community now and restart at login:
+  brew services start mongodb/brew/mongodb-community
+==> Summary
+🍺  /opt/homebrew/Cellar/mongodb-community/8.0.6: 12 files, 369.2MB, built in 4 seconds
+==> Running `brew cleanup mongodb-community`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+==> Caveats
+==> mongodb-community
+To start mongodb/brew/mongodb-community now and restart at login:
+  brew services start mongodb/brew/mongodb-community
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % brew services start mongodb-community
+==> Successfully started `mongodb-community` (label: homebrew.mxcl.mongodb-commu
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+{"message":"Erro interno do servidor"}%                                         fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % mongosh
+Current Mongosh Log ID:	67dd8487dd493603aff09745
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.4.2
+MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npm install --save-dev @types/bcrypt @types/jsonwebtoken --legacy-peer-deps
+
+added 3 packages, and audited 651 packages in 2s
+
+187 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com","password":"senha123"}'
+{"message":"Erro interno do servidor"}%                                         fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><noscript data-n-css=""></noscript><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__344122cf._.js" defer=""></script><script src="/_next/static/chunks/node_modules_react-dom_82bb97c6._.js" defer=""></script><script src="/_next/static/chunks/node_modules_beb00741._.js" defer=""></script><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__49fd8634._.js" defer=""></script><script src="/_next/static/chunks/pages__app_5771e187._.js" defer=""></script><script src="/_next/static/chunks/pages__app_19550276._.js" defer=""></script><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__57f0e368._.js" defer=""></script><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__923cb372._.js" defer=""></script><script src="/_next/static/chunks/pages__error_5771e187._.js" defer=""></script><script src="/_next/static/chunks/pages__error_35955722._.js" defer=""></script><script src="/_next/static/development/_ssgManifest.js" defer=""></script><script src="/_next/static/development/_buildManifest.js" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"statusCode":500,"hostname":"localhost"}},"page":"/_error","query":{},"buildId":"development","isFallback":false,"err":{"name":"Error","source":"server","message":"./app/api/auth/register/route.ts:46:17\nParsing ecmascript source code failed\n  44 |     \n  45 |     // Criar novo usuário\n\u003e 46 |     console.log('Cria\n     |                 ^^^^^\n\nUnterminated string constant\n\n","stack":"Error: ./app/api/auth/register/route.ts:46:17\nParsing ecmascript source code failed\n\u001b[0m \u001b[90m 44 |\u001b[39m     \u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m     \u001b[90m// Criar novo usuário\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m\u003e\u001b[22m\u001b[39m\u001b[90m 46 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'Cria\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\nUnterminated string constant\n\n\n    at Object.getCompilationErrors (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:722:59)\n    at DevBundlerService.getCompilationError (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/lib/dev-bundler-service.js:39:55)\n    at DevServer.getCompilationError (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/dev/next-dev-server.js:643:42)\n    at DevServer.findPageComponents (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/dev/next-dev-server.js:613:43)\n    at async DevServer.renderErrorToResponseImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/base-server.js:2604:26)"},"gip":true,"scriptLoader":[]}</script></body></html>%                                                          fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+{"message":"Erro interno do servidor"}%                                         fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+{"message":"Erro interno do servidor"}%                                         fellipeotani@MacBook-Air-de-Fellipe deusomelhorfellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % brew services list
+Name              Status   User         File
+mongodb-community error  6 fellipeotani ~/Library/LaunchAgents/homebrew.mxcl.mongodb-community.plist
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % brew services stop mongodb-community
+Stopping `mongodb-community`... (might take a while)
+==> Successfully stopped `mongodb-community` (label: homebrew.mxcl.mongodb-community)
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % brew services start mongodb-community
+==> Successfully started `mongodb-community` (label: homebrew.mxcl.mongodb-community)
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % mongosh
+Current Mongosh Log ID:	67dd88ddb8cc82c30fc00638
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.4.2
+MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % brew services log mongodb-community
+Usage: brew services [subcommand]
+
+Manage background services with macOS' launchctl(1) daemon manager or Linux's
+systemctl(1) service manager.
+
+If sudo is passed, operate on /Library/LaunchDaemons or
+/usr/lib/systemd/system  (started at boot). Otherwise, operate on
+~/Library/LaunchAgents or ~/.config/systemd/user (started at login).
+
+[sudo] brew services [list] (--json) (--debug):
+    List information about all managed services for the current user (or root).
+Provides more output from Homebrew and launchctl(1) or systemctl(1) if run
+with --debug.
+
+[sudo] brew services info (formula|--all|--json):
+    List all managed services for the current user (or root).
+
+[sudo] brew services run (formula|--all|--file=):
+    Run the service formula without registering to launch at login (or boot).
+
+[sudo] brew services start (formula|--all|--file=):
+    Start the service formula immediately and register it to launch at login
+(or boot).
+
+[sudo] brew services stop (formula|--all):
+    Stop the service formula immediately and unregister it from launching at
+login (or boot).
+
+[sudo] brew services kill (formula|--all):
+    Stop the service formula immediately but keep it registered to launch at
+login (or boot).
+
+[sudo] brew services restart (formula|--all):
+    Stop (if necessary) and start the service formula immediately and register
+it to launch at login (or boot).
+
+[sudo] brew services cleanup:
+    Remove all unused services.
+
+      --file                       Use the service file from this location to
+                                   start the service.
+      --sudo-service-user          When run as root on macOS, run the service(s)
+                                   as this user.
+      --max-wait                   Wait at most this many seconds for stop to
+                                   finish stopping a service. Omit this flag or
+                                   set this to zero (0) seconds to wait
+                                   indefinitely.
+      --all                        Run subcommand on all services.
+      --json                       Output as JSON.
+      --no-wait                    Don't wait for stop to finish stopping the
+                                   service.
+  -d, --debug                      Display any debugging information.
+  -q, --quiet                      Make some output more quiet.
+  -v, --verbose                    Make some output more verbose.
+  -h, --help                       Show this message.
+
+Error: Invalid usage: unknown subcommand: `log`
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % # Instale o Prisma
+npm install prisma @prisma/client --legacy-peer-deps
+
+# Inicialize o Prisma com PostgreSQL
+npx prisma init --datasource-provider postgresql
+zsh: command not found: #
+⠸# Instale o Prisma
+npm install prisma @prisma/client --legacy-peer-deps
+
+# Inicialize o Prisma com PostgreSQL
+
+added 11 packages, and audited 662 packages in 10s
+
+187 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+zsh: command not found: #
+
+✔ Your Prisma schema was created at prisma/schema.prisma
+  You can now open it in your favorite editor.
+
+warn You already have a .gitignore file. Don't forget to add `.env` in it to not commit any private information.
+
+Next steps:
+1. Set the DATABASE_URL in the .env file to point to your existing database. If your database has no tables yet, read https://pris.ly/d/getting-started
+2. Run prisma db pull to turn your database schema into a Prisma schema.
+3. Run prisma generate to generate the Prisma Client. You can then start querying your database.
+4. Tip: Explore how you can extend the ORM with scalable connection pooling, global caching, and real-time database events. Read: https://pris.ly/cli/beyond-orm
+
+More information in our documentation:
+https://pris.ly/d/getting-started
+    
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % # Instale o Prisma
+zsh: command not found: #
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npm install prisma @prisma/client --legacy-peer-deps
+
+# Inicialize o Prisma com PostgreSQL
+
+up to date, audited 662 packages in 2s
+
+187 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % # Inicialize o Prisma com PostgreSQL
+zsh: command not found: #
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npx prisma init --datasource-provider postgresql# Instale o Sequelize e o driver do PostgreSQL
+npm install sequelize pg pg-hstore --legacy-peer-deps
+
+# Se preferir MySQL
+# npm install sequelize mysql2 --legacy-peer-deps
+
+# Se preferir SQLite (mais simples para desenvolvimento)
+# npm install sequelize sqlite3 --legacy-peer-deps
+Error: The init command does not take any argument.
+
+added 29 packages, and audited 691 packages in 4s
+
+188 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+zsh: command not found: #
+zsh: command not found: #
+zsh: number expected
+zsh: command not found: #
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % # Crie o arquivo de teste
+touch test-sequelize.js
+
+# Adicione o código que forneci ao arquivo
+
+# Execute o teste
+node --experimental-modules test-sequelize.js
+zsh: command not found: #
+zsh: command not found: #
+zsh: command not found: #
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch test-sequelize.js
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % node --experimental-modules test-sequelize.js
+node:internal/modules/esm/resolve:275
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/Users/fellipeotani/Downloads/deusomelhor-1/lib/db.js' imported from /Users/fellipeotani/Downloads/deusomelhor-1/test-sequelize.js
+    at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    at moduleResolve (node:internal/modules/esm/resolve:860:10)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///Users/fellipeotani/Downloads/deusomelhor-1/lib/db.js'
+}
+
+Node.js v23.10.0
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % mkdir -p lib
+touch lib/db.ts
+touch lib/models.ts
+touch lib/init-db.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch test-sequelize.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npm install -D ts-node typescript --legacy-peer-deps
+
+added 14 packages, and audited 705 packages in 3s
+
+188 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npx ts-node test-sequelize.ts
+Error: Cannot find module '/Users/fellipeotani/Downloads/deusomelhor-1/lib/db' imported from /Users/fellipeotani/Downloads/deusomelhor-1/test-sequelize.ts
+Did you mean to import "./lib/db.ts"?
+    at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    at moduleResolve (node:internal/modules/esm/resolve:860:10)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at ModuleLoader.#cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///Users/fellipeotani/Downloads/deusomelhor-1/lib/db'
+}
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npx ts-node test-sequelize.ts
+Error: Cannot find module '/Users/fellipeotani/Downloads/deusomelhor-1/lib/db' imported from /Users/fellipeotani/Downloads/deusomelhor-1/test-sequelize.ts
+Did you mean to import "./lib/db.ts"?
+    at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    at moduleResolve (node:internal/modules/esm/resolve:860:10)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at ModuleLoader.#cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///Users/fellipeotani/Downloads/deusomelhor-1/lib/db'
+}
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch tsconfig.json
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % ls -la lib/
+total 88
+drwxr-xr-x@  8 fellipeotani  staff    256 21 Mar 12:52 .
+drwxr-xr-x@ 38 fellipeotani  staff   1216 21 Mar 12:56 ..
+-rw-r--r--@  1 fellipeotani  staff  17960 14 Mar 14:46 api.ts
+-rw-r--r--@  1 fellipeotani  staff   1368 21 Mar 12:54 auth.ts
+-rw-r--r--@  1 fellipeotani  staff    925 21 Mar 12:57 db.ts
+-rw-r--r--@  1 fellipeotani  staff    596 21 Mar 12:56 init-db.ts
+-rw-r--r--@  1 fellipeotani  staff   7651 21 Mar 12:59 models.ts
+-rw-r--r--@  1 fellipeotani  staff    166 11 Mar 09:03 utils.ts
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch test-db.js
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % node test-db.js
+/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:55
+        throw new Error(`Please install ${moduleName} package manually`);
+        ^
+
+Error: Please install sqlite3 package manually
+    at ConnectionManager._loadDialectModule (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:55:15)
+    at new ConnectionManager (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/sequelize/lib/dialects/sqlite/connection-manager.js:18:21)
+    at new SqliteDialect (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/sequelize/lib/dialects/sqlite/index.js:13:30)
+    at new Sequelize (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/sequelize/lib/sequelize.js:194:20)
+    at Object.<anonymous> (/Users/fellipeotani/Downloads/deusomelhor-1/test-db.js:4:19)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+    at Object..js (node:internal/modules/cjs/loader:1899:10)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+
+Node.js v23.10.0
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npm install sqlite3 --legacy-peer-deps
+npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated gauge@4.0.4: This package is no longer supported.
+
+added 86 packages, and audited 791 packages in 6s
+
+194 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npm install sqlite3 --legacy-peer-deps
+
+up to date, audited 791 packages in 1s
+
+194 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % node test-db.js
+Tentando conectar ao banco de dados...
+Executing (default): SELECT 1+1 AS result
+Conexão com o banco de dados estabelecida com sucesso!
+Sincronizando modelo...
+Executing (default): DROP TABLE IF EXISTS `Users`;
+Executing (default): PRAGMA foreign_keys = OFF
+Executing (default): DROP TABLE IF EXISTS `Users`;
+Executing (default): PRAGMA foreign_keys = ON
+Executing (default): DROP TABLE IF EXISTS `Users`;
+Executing (default): CREATE TABLE IF NOT EXISTS `Users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL UNIQUE, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL);
+Executing (default): PRAGMA INDEX_LIST(`Users`)
+Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_Users_1`)
+Modelo sincronizado com sucesso!
+Criando usuário de teste...
+Executing (default): INSERT INTO `Users` (`id`,`name`,`email`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4);
+Executing (default): SELECT count(*) AS `count` FROM `Users` AS `User`;
+Número de usuários: 1
+Conexão fechada.
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % touch sync-db.js
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % node sync-db.js
+Executing (default): DROP TABLE IF EXISTS `ResetCodes`;
+Executing (default): DROP TABLE IF EXISTS `Users`;
+Executing (default): PRAGMA foreign_keys = OFF
+Executing (default): DROP TABLE IF EXISTS `Users`;
+Executing (default): DROP TABLE IF EXISTS `ResetCodes`;
+Executing (default): PRAGMA foreign_keys = ON
+Executing (default): DROP TABLE IF EXISTS `Users`;
+Executing (default): CREATE TABLE IF NOT EXISTS `Users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL UNIQUE, `password` VARCHAR(255) NOT NULL, `phone` VARCHAR(255), `accountType` VARCHAR(255) NOT NULL DEFAULT 'demo', `realBalance` FLOAT NOT NULL DEFAULT '0', `demoBalance` FLOAT NOT NULL DEFAULT '10000', `bonusBalance` FLOAT NOT NULL DEFAULT '0', `verified` TINYINT(1) NOT NULL DEFAULT 0, `kycApproved` TINYINT(1) NOT NULL DEFAULT 0, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL);
+Executing (default): PRAGMA INDEX_LIST(`Users`)
+Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_Users_1`)
+Executing (default): DROP TABLE IF EXISTS `ResetCodes`;
+Executing (default): CREATE TABLE IF NOT EXISTS `ResetCodes` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `email` VARCHAR(255) NOT NULL, `code` VARCHAR(255) NOT NULL, `expiresAt` DATETIME NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL);
+Executing (default): PRAGMA INDEX_LIST(`ResetCodes`)
+Modelos sincronizados com sucesso!
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><noscript data-n-css=""></noscript><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__344122cf._.js" defer=""></script><script src="/_next/static/chunks/node_modules_react-dom_82bb97c6._.js" defer=""></script><script src="/_next/static/chunks/node_modules_beb00741._.js" defer=""></script><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__49fd8634._.js" defer=""></script><script src="/_next/static/chunks/pages__app_5771e187._.js" defer=""></script><script src="/_next/static/chunks/pages__app_19550276._.js" defer=""></script><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__57f0e368._.js" defer=""></script><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__923cb372._.js" defer=""></script><script src="/_next/static/chunks/pages__error_5771e187._.js" defer=""></script><script src="/_next/static/chunks/pages__error_35955722._.js" defer=""></script><script src="/_next/static/development/_ssgManifest.js" defer=""></script><script src="/_next/static/development/_buildManifest.js" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"statusCode":500,"hostname":"localhost"}},"page":"/_error","query":{},"buildId":"development","isFallback":false,"err":{"name":"Error","source":"server","message":"Please install sqlite3 package manually","stack":"Error: Please install sqlite3 package manually\n    at ConnectionManager._loadDialectModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_sequelize_b17c4820._.js:12229:23)\n    at new ConnectionManager (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_sequelize_b17c4820._.js:22035:25)\n    at new SqliteDialect (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_sequelize_b17c4820._.js:23087:34)\n    at new Sequelize (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_sequelize_b17c4820._.js:25932:24)\n    at [project]/lib/db.ts [app-route] (ecmascript) (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[root of the server]__9a34630b._.js:156:19)\n    at instantiateModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:590:23)\n    at getOrInstantiateModuleFromParent (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:645:12)\n    at esmImport (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:132:20)\n    at [project]/lib/models.ts [app-route] (ecmascript) (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[root of the server]__9a34630b._.js:184:137)\n    at instantiateModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:590:23)\n    at getOrInstantiateModuleFromParent (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:645:12)\n    at esmImport (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:132:20)\n    at [project]/app/api/auth/register/route.ts [app-route] (ecmascript) (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[root of the server]__9a34630b._.js:316:141)\n    at instantiateModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:590:23)\n    at getOrInstantiateModuleFromParent (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:645:12)\n    at esmImport (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:132:20)\n    at [project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE =\u003e \"[project]/app/api/auth/register/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript) (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_next_1cd8cb21._.js:11533:167)\n    at instantiateModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:590:23)\n    at instantiateRuntimeModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:653:12)\n    at Object.getOrInstantiateRuntimeModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:669:12)\n    at Object.\u003canonymous\u003e (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/app/api/auth/register/route.js:13:9)\n    at Module._compile (node:internal/modules/cjs/loader:1734:14)\n    at Object..js (node:internal/modules/cjs/loader:1899:10)\n    at Module.load (node:internal/modules/cjs/loader:1469:32)\n    at Function._load (node:internal/modules/cjs/loader:1286:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Module.\u003canonymous\u003e (node:internal/modules/cjs/loader:1491:12)\n    at mod.require (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/require-hook.js:65:28)\n    at require (node:internal/modules/helpers:135:16)\n    at requirePage (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/require.js:103:84)\n    at loadComponentsImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/load-components.js:129:57)\n    at async DevServer.findPageComponentsImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/next-server.js:808:36)\n    at async DevServer.findPageComponents (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/dev/next-dev-server.js:628:16)\n    at async DevServer.renderPageComponent (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/base-server.js:2379:24)\n    at async DevServer.renderToResponseImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/base-server.js:2430:32)\n    at async DevServer.pipeImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/base-server.js:1003:25)\n    at async NextNodeServer.handleCatchallRenderRequest (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/next-server.js:304:17)\n    at async DevServer.handleRequestImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/base-server.js:895:17)\n    at async /Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/dev/next-dev-server.js:371:20\n    at async Span.traceAsyncFn (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/trace/trace.js:157:20)\n    at async DevServer.handleRequest (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/dev/next-dev-server.js:368:24)\n    at async invokeRender (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/lib/router-server.js:234:21)\n    at async handleRequest (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/lib/router-server.js:422:24)\n    at async requestHandlerImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/lib/router-server.js:446:13)\n    at async Server.requestListener (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/lib/start-server.js:158:13)"},"gip":true,"scriptLoader":[]}</script></body></html>%                         fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><noscript data-n-css=""></noscript><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__344122cf._.js" defer=""></script><script src="/_next/static/chunks/node_modules_react-dom_82bb97c6._.js" defer=""></script><script src="/_next/static/chunks/node_modules_beb00741._.js" defer=""></script><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__49fd8634._.js" defer=""></script><script src="/_next/static/chunks/pages__app_5771e187._.js" defer=""></script><script src="/_next/static/chunks/pages__app_19550276._.js" defer=""></script><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__57f0e368._.js" defer=""></script><script src="/_next/static/chunks/%5Broot%20of%20the%20server%5D__923cb372._.js" defer=""></script><script src="/_next/static/chunks/pages__error_5771e187._.js" defer=""></script><script src="/_next/static/chunks/pages__error_35955722._.js" defer=""></script><script src="/_next/static/development/_ssgManifest.js" defer=""></script><script src="/_next/static/development/_buildManifest.js" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"statusCode":500,"hostname":"localhost"}},"page":"/_error","query":{},"buildId":"development","isFallback":false,"err":{"name":"Error","source":"server","message":"Please install sqlite3 package manually","stack":"Error: Please install sqlite3 package manually\n    at ConnectionManager._loadDialectModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_sequelize_b17c4820._.js:12229:23)\n    at new ConnectionManager (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_sequelize_b17c4820._.js:22035:25)\n    at new SqliteDialect (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_sequelize_b17c4820._.js:23087:34)\n    at new Sequelize (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_sequelize_b17c4820._.js:25932:24)\n    at createSequelizeInstance (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[root of the server]__9a34630b._.js:159:16)\n    at [project]/lib/db.ts [app-route] (ecmascript) (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[root of the server]__9a34630b._.js:168:19)\n    at instantiateModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:590:23)\n    at getOrInstantiateModuleFromParent (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:645:12)\n    at esmImport (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:132:20)\n    at [project]/lib/models.ts [app-route] (ecmascript) (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[root of the server]__9a34630b._.js:196:137)\n    at instantiateModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:590:23)\n    at getOrInstantiateModuleFromParent (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:645:12)\n    at esmImport (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:132:20)\n    at [project]/app/api/auth/register/route.ts [app-route] (ecmascript) (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[root of the server]__9a34630b._.js:328:141)\n    at instantiateModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:590:23)\n    at getOrInstantiateModuleFromParent (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:645:12)\n    at esmImport (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:132:20)\n    at [project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE =\u003e \"[project]/app/api/auth/register/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript) (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/node_modules_next_1cd8cb21._.js:11533:167)\n    at instantiateModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:590:23)\n    at instantiateRuntimeModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:653:12)\n    at Object.getOrInstantiateRuntimeModule (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/chunks/[turbopack]_runtime.js:669:12)\n    at Object.\u003canonymous\u003e (/Users/fellipeotani/Downloads/deusomelhor-1/.next/server/app/api/auth/register/route.js:13:9)\n    at Module._compile (node:internal/modules/cjs/loader:1734:14)\n    at Object..js (node:internal/modules/cjs/loader:1899:10)\n    at Module.load (node:internal/modules/cjs/loader:1469:32)\n    at Function._load (node:internal/modules/cjs/loader:1286:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Module.\u003canonymous\u003e (node:internal/modules/cjs/loader:1491:12)\n    at mod.require (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/require-hook.js:65:28)\n    at require (node:internal/modules/helpers:135:16)\n    at requirePage (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/require.js:103:84)\n    at loadComponentsImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/load-components.js:129:57)\n    at async DevServer.findPageComponentsImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/next-server.js:808:36)\n    at async DevServer.findPageComponents (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/dev/next-dev-server.js:628:16)\n    at async DevServer.renderPageComponent (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/base-server.js:2379:24)\n    at async DevServer.renderToResponseImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/base-server.js:2430:32)\n    at async DevServer.pipeImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/base-server.js:1003:25)\n    at async NextNodeServer.handleCatchallRenderRequest (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/next-server.js:304:17)\n    at async DevServer.handleRequestImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/base-server.js:895:17)\n    at async /Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/dev/next-dev-server.js:371:20\n    at async Span.traceAsyncFn (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/trace/trace.js:157:20)\n    at async DevServer.handleRequest (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/dev/next-dev-server.js:368:24)\n    at async invokeRender (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/lib/router-server.js:234:21)\n    at async handleRequest (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/lib/router-server.js:422:24)\n    at async requestHandlerImpl (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/lib/router-server.js:446:13)\n    at async Server.requestListener (/Users/fellipeotani/Downloads/deusomelhor-1/node_modules/next/dist/server/lib/start-server.js:158:13)"},"gip":true,"scriptLoader":[]}</script></body></html>%                        fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc1MjExLCJleHAiOjE3NDMxODAwMTF9.frgkyROS0IZrdiSoKGC8kkaC08DD0EXJm3gjlDYGI08","user":{"id":"7077a227-23ac-48e7-8ed0-2efa43602c6b","name":"Usuário Teste","email":"teste@exemplo.com","accountType":"demo","realBalance":0,"demoBalance":10000,"bonusBalance":0,"verified":false,"kycApproved":false}}%     fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Usuário Teste","email":"teste@exemplo.com","password":"senha123","phone":"11999999999"}'
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc1MjExLCJleHAiOjE3NDMxODAwMTF9.frgkyROS0IZrdiSoKGC8kkaC08DD0EXJm3gjlDYGI08","user":{"id":"7077a227-23ac-48e7-8ed0-2efa43602c6b","name":"Usuário Teste","email":"teste@exemplo.com","accountType":"demo","realBalance":0,"demoBalance":10000,"bonusBalance":0,"verified":false,"kycApproved":false}}%     fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 %
+cursh> 
+cursh> 
+cursh> 
+cursh> 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com","password":"senha123"}'
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc1Mjk0LCJleHAiOjE3NDMxODAwOTR9.vy-06_5T7mugKg3W7ScMGXLuy4HF0ZGGYsFI4ON-kPg","user":{"id":"7077a227-23ac-48e7-8ed0-2efa43602c6b","name":"Usuário Teste","email":"teste@exemplo.com","accountType":"demo","realBalance":0,"demoBalance":10000,"bonusBalance":0,"verified":false,"kycApproved":false}}%     fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % mkdir -p app/api/auth/forgot-passwor
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % mkdir -p app/api/auth/forgot-password
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % mkdir -p app/api/user/profile
+mkdir -p app/api/user/change-password
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/forgot-password \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com"}'
+{"message":"Se o email estiver cadastrado, você receberá um código de recuperação"}%                                                        fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % Registro concluído com sucesso
+ POST /api/auth/register 200 in 1874ms
+ ✓ Compiled /api/auth/login in 418ms
+ POST /api/auth/login 200 in 736ms
+ ○ Compiling /api/auth/forgot-password ...
+ ✓ Compiled /api/auth/forgot-password in 565ms
+Código de recuperação para teste@exemplo.com: 5E210D
+ POST /api/auth/forgot-password 200 in 1343ms
+
+zsh: command not found: Registro
+zsh: command not found: POST
+zsh: command not found: ✓
+zsh: command not found: POST
+zsh: command not found: ○
+zsh: command not found: ✓
+zsh: command not found: Código
+zsh: command not found: POST
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/verify-reset-code \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com","code":"5E210D"}'
+{"message":"Se o email estiver cadastrado, você receberá um código de recuperação"}%                                                        fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/verify-reset-code \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com","code":"88236B"}'
+{"message":"Se o email estiver cadastrado, você receberá um código de recuperação"}%                                                        fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/forgot-password \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com"}'
+{"message":"Se o email estiver cadastrado, você receberá um código de recuperação"}%                                                        fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/verify-reset-code \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com","code":"AEBD91"}'
+{"message":"Código verificado com sucesso","valid":true}%             fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/reset-password \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com","code":"AEBD91","password":"nova_senha123"}'
+{"message":"Senha atualizada com sucesso"}%                           fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com","password":"nova_senha123"}'
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc3MTA0LCJleHAiOjE3NDMxODE5MDR9.oQXWudboqZrl0Bi46GXGkuqc2UQR6jbUHdn4xqG3mCc","user":{"id":"7077a227-23ac-48e7-8ed0-2efa43602c6b","name":"Usuário Teste","email":"teste@exemplo.com","accountType":"demo","realBalance":0,"demoBalance":10000,"bonusBalance":0,"verified":false,"kycApproved":false}}%     fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X GET http://localhost:3000/api/user/profile \
+  -H "Authorization: Bearer $TOKEN"
+{"message":"Não autorizado"}%                                         fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X GET http://localhost:3000/api/user/profile \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc3MTA0LCJleHAiOjE3NDMxODE5MDR9.oQXWudboqZrl0Bi46GXGkuqc2UQR6jbUHdn4xqG3mC
+dquote> 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % //localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"teste@exemplo.com","password":"nova_senha123"}'
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc3MTA0LCJleHAiOjE3NDMxODE5MDR9.oQXWudboqZrl0Bi46GXGkuqc2UQR6jbUHdn4xqG3mCc","user":{"id":"7077a227-23ac-48e7-8ed0-2efa43602c6b","name":"Usuário Teste","email":"teste@exemplo.com","accountType":"demo","realBalance":0,"demoBalance":10000,"bonusBalance":0,"verified":false,"kycApproved":false}}%     fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X GET http://localhost:3000/api/user/profile \
+  -H "Authorization: Bearer $TOKEN"
+{"message":"Não autorizado"}%                                         fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X GET http://localhost:3000/api/user/profile \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc3MTA0LCJleHAiOjE3NDMxODE5MDR9.oQXWudboqZrl0Bi46GXGkuqc2UQR6jbUHdn4xqG3mC
+dquote>
+
+cursh cursh dquote> 
+fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X GET http://localhost:3000/api/user/profile \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc3MTA0LCJleHAiOjE3NDMxODE5MDR9.oQXWudboqZrl0Bi46GXGkuqc2UQR6jbUHdn4xqG3mCc"
+{"id":"7077a227-23ac-48e7-8ed0-2efa43602c6b","name":"Usuário Teste","email":"teste@exemplo.com","phone":"11999999999","document":null,"accountType":"demo","realBalance":0,"demoBalance":10000,"bonusBalance":0,"verified":false,"kycApproved":false}%                                  fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X PUT http://localhost:3000/api/user/profile \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc3MTA0LCJleHAiOjE3NDMxODE5MDR9.oQXWudboqZrl0Bi46GXGkuqc2UQR6jbUHdn4xqG3mCc" \
+  -d '{"name":"Usuário Atualizado","phone":"11988888888","document":"12345678900"}'
+{"id":"7077a227-23ac-48e7-8ed0-2efa43602c6b","name":"Usuário Atualizado","email":"teste@exemplo.com","phone":"11988888888","document":"12345678900","accountType":"demo","realBalance":0,"demoBalance":10000,"bonusBalance":0,"verified":false,"kycApproved":false}%                    fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/user/change-password \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc3MTA0LCJleHAiOjE3NDMxODE5MDR9.oQXWudboqZrl0Bi46GXGkuqc2UQR6jbUHdn4xqG3mCc" \
+  -d '{"currentPassword":"nova_senha123","newPassword":"senha_mais_nova456"}'
+{"message":"Senha atualizada com sucesso"}%                           fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % curl -X POST http://localhost:3000/api/user/change-password \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MDc3YTIyNy0yM2FjLTQ4ZTctOGVkMC0yZWZhNDM2MDJjNmIiLCJlbWFpbCI6InRlc3RlQGV4ZW1wbG8uY29tIiwiYWNjb3VudFR5cGUiOiJkZW1vIiwiaWF0IjoxNzQyNTc3MTA0LCJleHAiOjE3NDMxODE5MDR9.oQXWudboqZrl0Bi46GXGkuqc2UQR6jbUHdn4xqG3mCc" \
+  -d '{"currentPassword":"nova_senha123","newPassword":"senha_mais_nova456"}'
+{"message":"Senha atual incorreta"}%                                  fellipeotani@MacBook-Air-de-Fellipe deusomelhor-1 % npm run dev
+
+> deusomelhor@0.1.0 dev
+> next dev --turbopack
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+   ▲ Next.js 15.2.1 (Turbopack)
+   - Local:        http://localhost:3002
+   - Network:      http://192.168.0.167:3002
+   - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 1122ms
+ ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+ ⚠ See instructions if you need to configure Turbopack:
+  https://nextjs.org/docs/app/api-reference/next-config-js/turbo
+
+ ○ Compiling / ...
+ ✓ Compiled / in 2.8s
+ GET / 200 in 3122ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1310ms
+ GET /login 200 in 1358ms
+ ○ Compiling /register ...
+ ✓ Compiled /register in 1469ms
+ GET /register 200 in 1516ms
+ ○ Compiling /api/auth/register ...
+ ✓ Compiled /api/auth/register in 823ms
+Iniciando processo de registro...
+Dados recebidos: { name: 'fellipe', email: 'teste@gmail.com', phone: '232323232' }
+Verificando se o email já existe...
+Gerando hash da senha...
+Criando novo usuário...
+Gerando token JWT...
+Registro concluído com sucesso
+ POST /api/auth/register 200 in 1618ms
+ GET /login 200 in 34ms
+ ✓ Compiled /api/auth/login in 431ms
+ POST /api/auth/login 200 in 932ms
+ ✓ Compiled /_not-found/page in 430ms
+ GET /dashboard 404 in 454ms
+ GET /dashboard 404 in 68ms
+ ○ Compiling /trade ...
+ ✓ Compiled /trade in 1321ms
+ GET /trade 200 in 1523ms
+ GET /trade 200 in 57ms
+ ○ Compiling /profile ...
+ ✓ Compiled /profile in 1261ms
+ GET /profile 200 in 1311ms
+ ○ Compiling /api/user/profile ...
+ ✓ Compiled /api/user/profile in 813ms
+ GET /api/user/profile 200 in 1065ms
+ GET /api/user/profile 200 in 145ms
+ ○ Compiling /deposit ...
+ ✓ Compiled /deposit in 1112ms
+ GET /deposit 200 in 1147ms
+ ○ Compiling /withdraw ...
+ ✓ Compiled /withdraw in 947ms
+ GET /withdraw 200 in 982ms
+ ○ Compiling /transactions ...
+ ✓ Compiled /transactions in 719ms
+ GET /transactions 200 in 751ms
+ ○ Compiling /operations ...
+ ✓ Compiled /operations in 1124ms
+ GET /operations 200 in 1187ms
+ GET /profile 200 in 37ms
+ GET /api/user/profile 200 in 290ms
+ GET /api/user/profile 200 in 136ms
+ ○ Compiling /copytrader ...
+ ✓ Compiled /copytrader in 925ms
+ GET /copytrader 200 in 984ms
+ GET /deposit 200 in 32ms
+ GET /copytrader 200 in 33ms
+ GET /trade 200 in 34ms
+ GET /trade 200 in 80ms
+ GET /deposit 200 in 48ms
+ GET /withdraw 200 in 48ms
+ GET /transactions 200 in 37ms
+ GET /deposit 200 in 32ms
+ GET /trade 200 in 70ms
+ GET /trade 200 in 103ms
+ GET /trade 200 in 55ms
+ GET /profile 200 in 34ms
+ GET /api/user/profile 200 in 533ms
+ GET /api/user/profile 200 in 142ms
+ GET /transactions 200 in 36ms
+ GET /operations 200 in 39ms
+ GET /profile 200 in 31ms
+ GET /api/user/profile 200 in 236ms
+ GET /api/user/profile 200 in 145ms
+ GET /copytrader 200 in 33ms
+ GET /trade 200 in 33ms
+ GET /trade 200 in 76ms
+ GET /profile 200 in 50ms
+ GET /api/user/profile 200 in 495ms
+ GET /api/user/profile 200 in 128ms
+ GET /copytrader 200 in 35ms
+ GET /trade 200 in 49ms
+ GET /trade 200 in 83ms
+ ⚠ Duplicate page detected. app/api/transactions/deposit/route.ts and app/api/transactions/deposit/route.tsx resolve to /api/transactions/deposit
+   Reload env: .env.local
+ GET /trade 200 in 370ms
+ GET /login 200 in 125ms
+ GET /trade 200 in 168ms
+   Reload env: .env.local
+ GET / 200 in 417ms
+ GET /dashboard 404 in 138ms
+ GET /dashboard 404 in 146ms
+ GET /trade 200 in 144ms
+ GET /deposit 200 in 61ms
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/deposit/page.tsx:14:1
+Module not found: Can't resolve '@/components/ui/use-toast'
+  12 | import { Clock, Copy, CheckCircle2, ChevronDown, ChevronUp, Gift, Tag, ArrowRight, AlertCircle } from "lucide-react"
+  13 | import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+> 14 | import { toast } from "@/components/ui/use-toast"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 | export default function DepositPage() {
+  17 |   const [amount, setAmount] = useState("100")
+
+Import map: aliased to relative './components/ui/use-toast' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ✓ Compiled in 2.8s
+ ✓ Compiled /deposit in 31ms
+ ⚠ Fast Refresh had to perform a full reload when [turbopack]/browser/dev/hmr-client/hmr-client.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /deposit 200 in 438ms
+ GET /deposit 200 in 515ms
+ ○ Compiling /api/transactions/deposit ...
+ ✓ Compiled /api/transactions/deposit in 1480ms
+ POST /api/transactions/deposit 401 in 1597ms
+ POST /api/transactions/deposit 401 in 43ms
+ GET /deposit 200 in 355ms
+ POST /api/transactions/deposit 401 in 30ms
+ GET /deposit 200 in 161ms
+Criando depósito PIX de R$ 200 para o usuário user-123
+Bônus aplicado: 100%
+Autenticando na API XGate...
+Autenticação bem-sucedida. Token obtido.
+Buscando detalhes da moeda...
+Moeda PIX encontrada: BRL R$
+Usando cliente existente com ID: 67de2322bbf0316b4edca8df
+Criando depósito PIX...
+Dados do depósito: {
+  "amount": 200,
+  "customerId": "67de2322bbf0316b4edca8df",
+  "currency": {
+    "_id": "6728f0a2cba3ac9ea3009993",
+    "name": "BRL",
+    "type": "PIX",
+    "createdDate": "2024-11-04T16:04:50.019Z",
+    "updatedDate": "2024-11-07T02:23:38.606Z",
+    "__v": 0,
+    "symbol": "R$"
+  }
+}
+Depósito criado com sucesso. ID: 67e006b33c3d74da151ff347
+Transação registrada no banco de dados
+ POST /api/transactions/deposit 200 in 3358ms
+ GET /withdraw 200 in 116ms
+ GET /withdraw 200 in 392ms
+ GET /withdraw 200 in 68ms
+ GET /trade 200 in 54ms
+ GET /profile 200 in 48ms
+Erro na verificação de autenticação: Error [JsonWebTokenError]: invalid signature
+    at verifyAuth (lib/auth.ts:30:27)
+    at <unknown> (lib/auth.ts:57:23)
+  28 |
+  29 |     // Verificar token
+> 30 |     const decoded = verify(token, JWT_SECRET) as DecodedToken
+     |                           ^
+  31 |
+  32 |     // Verificar se o usuário existe
+  33 |     const { data: user, error } = await supabase.from("users").select("id").eq("id", decoded.userId).single() {
+  constructor: [Function: JsonWebTokenError]
+}
+ GET /api/user/profile 401 in 514ms
+Erro na verificação de autenticação: Error [JsonWebTokenError]: invalid signature
+    at verifyAuth (lib/auth.ts:30:27)
+    at <unknown> (lib/auth.ts:57:23)
+  28 |
+  29 |     // Verificar token
+> 30 |     const decoded = verify(token, JWT_SECRET) as DecodedToken
+     |                           ^
+  31 |
+  32 |     // Verificar se o usuário existe
+  33 |     const { data: user, error } = await supabase.from("users").select("id").eq("id", decoded.userId).single() {
+  constructor: [Function: JsonWebTokenError]
+}
+ GET /api/user/profile 401 in 299ms
+ GET /login 200 in 315ms
+ POST /api/auth/login 200 in 1250ms
+ GET /dashboard 404 in 65ms
+ GET /dashboard 404 in 63ms
+ GET /trade 200 in 155ms
+ GET /profile 200 in 75ms
+ GET /api/user/profile 200 in 2320ms
+ GET /api/user/profile 200 in 3674ms
+ GET /deposit 200 in 70ms
+ GET /operations 200 in 74ms
+ GET /operations 200 in 229ms
+ GET /operations 200 in 195ms
+ ✓ Compiled /deposit in 19ms
+ GET /deposit 200 in 203ms
+ GET /deposit 200 in 516ms
+Criando depósito PIX de R$ 200 para o usuário user-123
+Bônus aplicado: 100%
+Autenticando na API XGate...
+Autenticação bem-sucedida. Token obtido.
+Buscando detalhes da moeda...
+Moeda PIX encontrada: BRL R$
+Usando cliente existente com ID: 67de2322bbf0316b4edca8df
+Criando depósito PIX...
+Dados do depósito: {
+  "amount": 200,
+  "customerId": "67de2322bbf0316b4edca8df",
+  "currency": {
+    "_id": "6728f0a2cba3ac9ea3009993",
+    "name": "BRL",
+    "type": "PIX",
+    "createdDate": "2024-11-04T16:04:50.019Z",
+    "updatedDate": "2024-11-07T02:23:38.606Z",
+    "__v": 0,
+    "symbol": "R$"
+  }
+}
+Depósito criado com sucesso. ID: 67e0104b3c3d74da15201774
+Transação registrada no banco de dados
+ POST /api/transactions/deposit 200 in 4092ms
+Criando depósito PIX de R$ 100 para o usuário user-123
+Bônus aplicado: 100%
+Autenticando na API XGate...
+Autenticação bem-sucedida. Token obtido.
+Buscando detalhes da moeda...
+Moeda PIX encontrada: BRL R$
+Usando cliente existente com ID: 67de2322bbf0316b4edca8df
+Criando depósito PIX...
+Dados do depósito: {
+  "amount": 100,
+  "customerId": "67de2322bbf0316b4edca8df",
+  "currency": {
+    "_id": "6728f0a2cba3ac9ea3009993",
+    "name": "BRL",
+    "type": "PIX",
+    "createdDate": "2024-11-04T16:04:50.019Z",
+    "updatedDate": "2024-11-07T02:23:38.606Z",
+    "__v": 0,
+    "symbol": "R$"
+  }
+}
+Depósito criado com sucesso. ID: 67e0107f3c3d74da15201855
+Transação registrada no banco de dados
+ POST /api/transactions/deposit 200 in 3053ms
+curl -X POST http://localhost:3000/api/transactions/deposit \
+  -H "Content-Type: application/json" \
+  -d '{"amount": 100, "bonus": 100}'
+ ✓ Compiled /deposit in 128ms
+ GET /deposit 200 in 656ms
+ GET /transactions 200 in 109ms
+ GET /operations 200 in 123ms
+ GET /login 200 in 136ms
+
